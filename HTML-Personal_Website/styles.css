@@ -1,0 +1,28 @@
+body{
+    background-color: rgb(228, 236, 255);
+    width: auto;
+  }
+
+  hr{
+    border-color: rgb(139, 152, 160);
+    border-style: dashed;
+    width: 10%;
+  }
+
+  img{
+    width: 50%;
+  }
+
+  fieldset{
+    border-radius: 1em;
+    border-width: 0.2em;
+    border-style: solid;
+    border-color: aquamarine;
+  }
+
+  #skills{
+    border-style: dotted;
+    border-radius: 1em;
+    border-color: rgb(39, 220, 220);
+  }
+  
