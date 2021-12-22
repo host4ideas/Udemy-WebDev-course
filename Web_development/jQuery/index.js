@@ -19,7 +19,7 @@ $(".change-html button").html("<b>Changed html</b>");
 $("a").first().attr("href", "https://www.google.es")
 $("a").eq(0).attr("href", "https://www.google.es")
 console.log($("a").first().attr("href"));
-// This wil work because returns a jQuery object
+// This will work because returns a jQuery object
 console.log($("a").eq(1).attr("href"));
 // This won't work because returns a DOM element
 // console.log($("a").get(1).attr("href"));
@@ -60,24 +60,31 @@ $("#body-title").prepend("<button>New 3</button>");
 // <h1>jQuery<button>New 4</button></h1>
 $("#body-title").append("<button>New 4</button>");
 
-$(".fade-in").click(function(){
-    h1.fadeIn();
-});
-$(".fade-out").click(function(){
-    $("h1").fadeOut();
-});
-$(".fade-toggle").click(function(){
-    h1.fadeToggle();
-});
-$(".hide").click(function(){
-    h1.hide();
-});
-$(".show").click(function(){
-    h1.show();
-});
-$(".toggle").click(function(){
+$(".toggle").click(function () {
     h1.toggle();
 });
-$(".slide-toggle").click(function(){
-    h1.slideToggle();
+$(".fade-in").click(function () {
+    h1.fadeIn();
 });
+$(".fade-out").click(function () {
+    $("h1").fadeOut();
+});
+$(".fade-toggle").click(function () {
+    h1.fadeToggle();
+});
+$(".hide").click(function () {
+    h1.hide();
+});
+$(".show").click(function () {
+    h1.show();
+});
+$(".slide-toggle").click(function () {
+    h1.slideToggle();
+    // h1.slideUp();
+    // h1.slideDown();
+});
+
+$(".animated-color").click(function () {
+    $("h1").slideUp().slideDown().animate({ margin: "50px" }).animate({ opacity: 0.5 })
+});
+
