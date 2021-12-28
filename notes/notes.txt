@@ -9,11 +9,12 @@ create database: use <DB_NAME>
 show databases: show dbs
 create collection: db.<COLLECTION_NAME>
 show collections: show collections
+delete collection: db.<COLLECTION_NAME>.drop()
 insert data into collection: db.<COLLECTION_NAME>.insertOne({<KEYS_VALUES>})
 show all data: db.<COLLECTION_NAME>.find()
 show query data: db.<COLLECTION_NAME>.find(<QUERY>)
 add column: db.products.updateOne({<QUERY>}, {$set: {<COLUMN>: <VALUE>}})
-delete databas: db.dropDatabase()
+delete database: db.dropDatabase()
 
 To stop server service: sudo pkill -f mongod
 To start mongo server service: mongod
