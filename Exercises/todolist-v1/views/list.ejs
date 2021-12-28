@@ -1,25 +1,25 @@
 <%- include('header') -%>
 
-    <body>
-        <div class="box" id="heading">
-            <h1>
-                <%= listTitle %>
-            </h1>
+<body>
+    <div class="box" id="heading">
+        <h1>
+            <%= listTitle %>
+        </h1>
+    </div>
+    <div class="box">
+        <% newListItems.forEach(element=> { %>
+        <div class="item">
+            <input type="checkbox">
+            <p>
+                <%= element %>
+            </p>
         </div>
-        <div class="box">
-            <% newListItems.forEach(element=> { %>
-                <div class="item">
-                    <input type="checkbox">
-                    <p>
-                        <%= element %>
-                    </p>
-                </div>
-                <% }); %>
-                    <form action="/" method="post" class="item">
-                        <input type="text" id="addItem" name="newItem" placeholder="New item" autocomplete="off">
-                        <button type="submit" name="list" value="<%= listTitle %>">+</button>
-                    </form>
-        </div>
-    </body>
+        <% }); %>
+        <form action="/" method="post" class="item">
+            <input type="text" id="addItem" name="newItem" placeholder="New item" autocomplete="off">
+            <button type="submit" name="list" value="<%= listTitle %>">+</button>
+        </form>
+    </div>
+</body>
 
-    <%- include('footer') -%>
+<%- include('footer') -%>

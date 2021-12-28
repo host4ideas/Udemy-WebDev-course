@@ -1,0 +1,19 @@
+Link formatter (kebab-case) library: lodash
+
+To pass information to a page: 
+app.post (/origin) {redirect /destination}
+app.get (/destination) {render => pass desired key:values}
+
+--- MONGO DB ---
+create database: use <DB_NAME>
+show databases: show dbs
+create collection: db.<COLLECTION_NAME>
+show collections: show collections
+insert data into collection: db.<COLLECTION_NAME>.insertOne({<KEYS_VALUES>})
+show all data: db.<COLLECTION_NAME>.find()
+show query data: db.<COLLECTION_NAME>.find(<QUERY>)
+add column: db.products.updateOne({<QUERY>}, {$set: {<COLUMN>: <VALUE>}})
+delete databas: db.dropDatabase()
+
+To stop server service: sudo pkill -f mongod
+To start mongo server service: mongod
