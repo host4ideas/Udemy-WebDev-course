@@ -18,3 +18,53 @@ delete database: db.dropDatabase()
 
 To stop server service: sudo pkill -f mongod
 To start mongo server service: mongod
+
+- Validation
+const fruitSchema = new Schema({
+    name: {
+        type: String,
+        required: [true, `Don't have ideas?`]
+    },
+    rating: {
+        type: Number,
+        min: [1, 'At least one star please'],
+        max: [10, '{VALUE} is to much love!']
+    },
+    review: String
+});
+
+apple.save().then(result => {
+    log(result);
+}).catch(err => {
+    log(err.message);
+});
+
+
+--- Promises & callbacks ---
+
+- try -> catch
+
+apple.save().then(result => {
+    log(result);
+}, err => {
+    log(err._message);
+})
+
+apple.save().then(result => {
+    log(result);
+}).catch(err => {
+    log(err._message);
+});
+
+- With callback
+
+Fruit.insertMany([apple, kiwi, orange, banana], (err) => {
+    if (err) log(err);
+    else log('Saved fruits');
+});
+
+const cursor = Person.find({ occupation: /host/ }).cursor();
+
+for (let doc = await cursor.next(); doc != null; doc = await cursor.next()) {
+  console.log(doc); // Prints documents one at a time
+}
