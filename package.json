@@ -1,0 +1,24 @@
+{
+  "name": "Udemy-WebDev-course",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "dotenv": "^10.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/host4ideas/Udemy-WebDev-course.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/host4ideas/Udemy-WebDev-course/issues"
+  },
+  "homepage": "https://github.com/host4ideas/Udemy-WebDev-course#readme"
+}
