@@ -1,8 +1,21 @@
+--- EXPRESS ---
+
 Link formatter (kebab-case) library: lodash
 
 To pass information to a page: 
 app.post (/origin) {redirect /destination}
 app.get (/destination) {render => pass desired key:values}
+
+- Dynamic routes:
+app.get('/:paramName', (req, res) => {
+    let route = _.kebabCase(req.params.paramName);
+    if (route == 'work') {
+        res.render('list', { listTitle: "Work List", newListItems: workItems });
+        
+    } else if (route == 'about') {
+        res.render('about');
+    }
+});
 
 --- MONGO DB ---
 create database: use <DB_NAME>
