@@ -7,8 +7,8 @@ const { Schema } = mongoose;
 const { model } = mongoose;
 require('dotenv').config();
 
+let port = process.env.PORT;
 const app = express();
-const port = 3000;
 // let uri = "mongodb://localhost:27017/todolistDB";
 let uri = `mongodb+srv://admin:${process.env.MONGODB_PASSWD}@cluster0.mvhsi.mongodb.net/todolistDB?retryWrites=true&w=majority`;
 mongoose.connect(uri);
@@ -102,6 +102,10 @@ app.post('/delete', (req, res) => {
 app.get("/about", function (req, res) {
     res.render("about");
 });
+
+if (port == null || port == "") {
+    port = 3000;
+}
 
 app.listen(port, (req, res) => {
     log(`Server running at: http://localhost:${port}`)
