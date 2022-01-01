@@ -53,34 +53,43 @@ apple.save().then(result => {
 });
 
 
---- Promises & callbacks ---
+--- Promises, async & callbacks ---
 
-- try -> catch
-
-apple.save().then(result => {
-    log(result);
-}, err => {
-    log(err._message);
+.put(async (req, res) => {
+		try {
+			const result = await Article.replaceOne({ title: req.params.article }, { title: req.body.title, content: req.body.content });
+			if (result.modifiedCount < 1) {
+				res.send('No changed documents')
+			} else {
+				res.send("Succesfully changed the selected article")
+			}
+		} catch (err) { res.send(err) }
+	})
+.patch((req, res) => {
+	Article.updateOne({ title: req.params.article }, { $set: req.body }).then((result => {
+		if (result.modifiedCount < 1) {
+			res.send('Article not updated')
+		} else {
+			res.send('Succesfully updated')
+		}
+	})).catch((error) => {
+		res.send(error)
+	});
 })
-
-apple.save().then(result => {
-    log(result);
-}).catch(err => {
-    log(err._message);
+.delete((req, res) => {
+	Article.findOneAndDelete({ title: req.params.article }).then(result => {
+		res.send(result);
+	}, err => {
+		res.send(err);
+	});
 });
 
-- With callback
+- Callbacks
 
 Fruit.insertMany([apple, kiwi, orange, banana], (err) => {
     if (err) log(err);
     else log('Saved fruits');
 });
-
-const cursor = Person.find({ occupation: /host/ }).cursor();
-
-for (let doc = await cursor.next(); doc != null; doc = await cursor.next()) {
-  console.log(doc); // Prints documents one at a time
-}
 
 
 --- HEROKU ---
