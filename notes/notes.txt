@@ -92,4 +92,14 @@ Fruit.insertMany([apple, kiwi, orange, banana], (err) => {
 });
 
 
---- HEROKU ---
+--- AUTHENTICATION ---
+
+Level 1: users
+Level 2: DB encryption -> mongoose-encryption
+Level 3: Hash passwords -> MD5 (not the best to encrypt)
+	Hashing is a one-way function (i.e., it is impossible to "decrypt" a hash and obtain the original plaintext value)
+	Encryption is a two-way function, meaning that the original plaintext can be retrieved
+Level 4: Salting and hashing passwords -> bcrypt
+	If an incompatible node.js version is being used: npm nvm
+Level 5: Cookies and sessions -> passport passport-local passport-local-mongoose express-session
+Level 6: OAuth 2.0
