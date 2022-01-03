@@ -101,5 +101,5 @@ Level 3: Hash passwords -> MD5 (not the best to encrypt)
 	Encryption is a two-way function, meaning that the original plaintext can be retrieved
 Level 4: Salting and hashing passwords -> bcrypt
 	If an incompatible node.js version is being used: npm nvm
-Level 5: Cookies and sessions -> passport passport-local passport-local-mongoose express-session
-Level 6: OAuth 2.0
+Level 5: Cookies and sessions -> passport  passport-local  passport-local-mongoose  express-session
+Level 6: OAuth 2.0 -> passport-google-oauth20  mongoose-findorcreate
