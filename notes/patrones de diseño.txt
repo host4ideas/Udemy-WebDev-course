@@ -1,0 +1,36 @@
+--- Patrones de diseño ---
+
+-- Patrón basado en módulos:
+Crear objetos que harán la función de módulos con métodos dentro,
+dichos módulos estarán expuestos en toda la aplicación,
+por ello se crea un objeto intermedio (Función de invocación inmediata)
+que retornará los métodos de los módulos al invocar a dicho objeto.
+
+-- Patrón singleton:
+Restringe la creación de instancias de una clase a una instancia.
+Útil cuando se necesita un objeto para coordinar acciones a través
+de la app.
+Por defecto los objetos son singleton (dos objetos con las mismas propiedades
+no serán iguales ob1 === ob2 -> false).
+Para ello se puede crear una función de invocación inmediata se pueden 
+añadir métodos y devolverlos con return para exponerlos.
+
+-- Patrón factory:
+Dividir en clases las propiedades de un objeto final deseado.
+Las propiedades se añaden con el keyword .this = valor
+
+-- Patrón decorador:
+Promueve la reutilización de código.
+Es útil para crear subclases o subobjetos sin depender de la herencia.
+Cuando necesitamos delegar funcionalidades a otro objeto sin depender de las sublcases.
+Por ejemplo, podemos sobreescribir métodos de una clase para ese objeto,
+pero siempre partiendo de las propiedades y métodos de la clase original.
+
+-- Patrón observador:
+Nos ayuda en la comunicación de diferentes instancias de una app.
+Por ejemplo, hacer que una función en una instancia dependa de una función
+en otra instancia.
+Un ejemplo serían los addEventListener que disparan una función manejador.
+
+
+-- Patrón prototipo:
