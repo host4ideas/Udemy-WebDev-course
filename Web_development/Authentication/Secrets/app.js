@@ -146,24 +146,6 @@ app.get('/register', (req, res) => {
 	res.render('register');
 });
 
-// Example with bcrypt
-// app.post('/register', (req, res) => {
-// 	bcrypt.hash(req.body.password, saltRounds, function (err, hash) {
-// 		// Store hash in your password DB.
-// 		const newUser = User({
-// 			username: req.body.username,
-// 			password: hash
-// 			// MD5 hashing
-// 			// password: md5(req.body.password)
-// 		});
-// 		newUser.save().then(result => {
-// 			res.render('secrets');
-// 		}, err => {
-// 			log(err.message);
-// 		});
-// 	});
-// });
-
 app.post("/register", function (req, res) {
 	User.register({ username: req.body.username }, req.body.password).then(() => {
 		passport.authenticate("local", { failureRedirect: '/register' })(req, res, function () {
