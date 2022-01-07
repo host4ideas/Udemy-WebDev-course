@@ -1,8 +1,9 @@
 require("dotenv").config();
 const { log } = require("console");
-const express = require("express");
+// const express = require("express");
+import express from "express";
 const bodyParser = require("body-parser");
-const mongoose = require("mongoose");
+import mongoose, {Schema}, {model} from "mongoose";
 const { Schema } = mongoose;
 const { model } = mongoose;
 ////////// COOKIES //--------->
