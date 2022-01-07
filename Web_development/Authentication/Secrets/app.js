@@ -7,8 +7,8 @@ const { Schema } = mongoose;
 const { model } = mongoose;
 // const encrypt = require('mongoose-encryption');
 // const md5 = require('md5');
-const bcrypt = require('bcrypt');
-const saltRounds = 10;
+// const bcrypt = require('bcrypt');
+// const saltRounds = 10;
 ////////// COOKIES CONFIG //--------->
 const session = require('express-session');
 const passport = require('passport');
